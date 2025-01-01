@@ -4,7 +4,7 @@ import Container from './layout/Container';
 import BetaForm from './beta/BetaForm';
 export const runtime = "edge";
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); 
   const [showBetaForm, setShowBetaForm] = useState(false);
 
   useEffect(() => {
