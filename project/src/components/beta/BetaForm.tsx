@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, X } from 'lucide-react';
 import Confetti from 'react-confetti'; // Import react-confetti
+import { singupuser } from '../../actions/beta_actions';
 export const runtime = "edge";
 
 interface BetaFormProps {
@@ -25,6 +26,7 @@ export default function BetaForm({ onClose }: BetaFormProps) {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
+    singupuser(email, fullName, contact);
     e.preventDefault();
     // Handle form submission
     console.log({ email, newsletter, fullName, contact, countryCode });
@@ -46,13 +48,13 @@ export default function BetaForm({ onClose }: BetaFormProps) {
           <div className="absolute inset-0 border-2 border-transparent border-t-silver animate-border-spin"></div>
         </div>
       )}
-      <div 
+      <div
         className="absolute inset-0 bg-black/90 backdrop-blur-lg"
         onClick={onClose}
       />
-      
+
       <div className="relative bg-zinc-900/90 rounded-2xl p-8 max-w-md w-full border border-white/50 z-40"> {/* Add z-40 to ensure the container is below the popup */}
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
         >
