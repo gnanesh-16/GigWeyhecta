@@ -4,6 +4,9 @@ import Container from './layout/Container';
 import RecordingStatus from './recording/RecordingStatus';
 import RecordingsList from './recording/RecordingsList';
 import Infographic from './infographics/Infographic';
+import { startRecording, stopRecording, replayRecording } from '../actions/startrecording';
+
+
 export const runtime = "edge";
 
 export default function Hero() {
@@ -45,12 +48,15 @@ export default function Hero() {
     };
   }, [isRecording]);
 
-  const handleStartRecording = () => {
+  const handleStartRecording = async () => {
     setIsRecording(true);
     setShowRecordings(false);
     setDuration(0);
     setActions(0);
     setSize(0);
+
+    // Call the startRecording function from the actions
+    startRecording();
   };
 
   const handleStopRecording = () => {
@@ -63,6 +69,7 @@ export default function Hero() {
       // Always display size in KB
       size: `${size.toFixed(2)} KB`
     };
+    stopRecording();
     setRecordings([...recordings, newRecording]);
   };
 
@@ -106,6 +113,7 @@ export default function Hero() {
       console.log('Paused', id);
     } else {
       // Start playing new recording
+      replayRecording();
       setCurrentlyPlayingId(id);
       // Add logic to play the recording if necessary
       console.log('Playing', id);
