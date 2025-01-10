@@ -1,12 +1,48 @@
-# GigWey
-Web Automation Reimagined Automate your web workflows with pixel-perfect precision and AI-powered intelligence and a Pixel-Perfect Control Sub-pixel accuracy for precise automation
+# ⚡ Python Starter Function
 
-![screencapture-localhost-5173-2024-12-30-19_09_49](https://github.com/user-attachments/assets/fcdbcf75-afea-434b-8d11-0943e52bf520)
+A simple starter function. Edit `src/main.py` to get started and create something awesome! 🚀
 
-![screencapture-localhost-5173-Gigwey-2024-12-31-17_00_53](https://github.com/user-attachments/assets/b10b1cfb-ee24-4f36-b3e6-28501b771148)
+## 🧰 Usage
 
-![screencapture-localhost-5173-Gigwey-2024-12-31-17_04_46](https://github.com/user-attachments/assets/10a3bd96-b648-4387-936c-5643610aec6e)
+### GET /ping
 
+- Returns a "Pong" message.
 
-![image](https://github.com/user-attachments/assets/6f70d3d7-3182-41d4-883a-32ec1e8a2845)
+**Response**
 
+Sample `200` Response:
+
+```text
+Pong
+```
+
+### GET, POST, PUT, PATCH, DELETE /
+
+- Returns a "Learn More" JSON response.
+
+**Response**
+
+Sample `200` Response:
+
+```json
+{
+  "motto": "Build like a team of hundreds_",
+  "learn": "https://appwrite.io/docs",
+  "connect": "https://appwrite.io/discord",
+  "getInspired": "https://builtwith.appwrite.io"
+}
+```
+
+## ⚙️ Configuration
+
+| Setting           | Value                             |
+| ----------------- | --------------------------------- |
+| Runtime           | Python (3.9)                      |
+| Entrypoint        | `src/main.py`                     |
+| Build Commands    | `pip install -r requirements.txt` |
+| Permissions       | `any`                             |
+| Timeout (Seconds) | 15                                |
+
+## 🔒 Environment Variables
+
+No environment variables required.
