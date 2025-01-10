@@ -1,20 +1,21 @@
 from flask import Flask, jsonify
 import requests
 from .test import PreciseActionRecorder
-
+import json
 
 app = Flask(__name__)
 recorder = PreciseActionRecorder()
 
 @app.route('/start-recording', methods=['POST'])
-def start_recording():
+def start_recording(context):
     recorder.start_recording()
     if(recorder.is_recording):
+        context.log("Recording started")
         return jsonify({"message": "Recording started"}), 200
     # return jsonify({"message": "Recording started"}), 200
 
 @app.route('/stop-recording', methods=['POST'])
-def start_recording():
+def start_recording(context):
     log_file = recorder.stop_recording()
     if log_file:
         with open(log_file, 'r') as f:
