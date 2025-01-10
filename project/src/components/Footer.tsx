@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex items-center space-x-4">
             {/* GitHub Icon with Micro Animation */}
             <a
-              href="https://github.com/gnanesh-16/Gigwey-"
+              href="https://github.com/gnanesh-16/GigWeyhecta"
               className="text-gray-400 hover:text-white transition-colors transform active:translate-y-[-2px] active:text-green-500 active:border-black border border-transparent rounded-full p-2 transition-transform duration-200"
               target="_blank"
               rel="noopener noreferrer"
