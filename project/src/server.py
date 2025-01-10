@@ -9,7 +9,9 @@ recorder = PreciseActionRecorder()
 @app.route('/start-recording', methods=['POST'])
 def start_recording():
     recorder.start_recording()
-    return jsonify({"message": "Recording started"}), 200
+    if(recorder.is_recording):
+        return jsonify({"message": "Recording started"}), 200
+    # return jsonify({"message": "Recording started"}), 200
 
 @app.route('/stop-recording', methods=['POST'])
 def start_recording():
@@ -18,7 +20,7 @@ def start_recording():
         with open(log_file, 'r') as f:
             data = f.read()
         # Send the JSON data to the database
-        response = requests.post('https://cloud.appwrite.io/v1/databases/DBLD/collections/67751f2a00039872c0e0/documents', 
+        response = requests.post('https://cloud.appwrite.io/v1/databases/678134b3002fc036acbe/collections/678134bf0030cbc83f3a/documents', 
                                  headers={'Content-Type': 'application/json'},
                                  data=data)
         return jsonify({"message": "Recording stopped", "response": response.json()}), 200
