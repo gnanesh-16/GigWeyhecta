@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, X } from 'lucide-react';
+import { Mail, X } from 'lucide-react'; // Remove Rocket icon import
 import Confetti from 'react-confetti'; // Import react-confetti
 import { singupuser } from '../../actions/beta_actions';
 export const runtime = "edge";
@@ -68,7 +68,9 @@ export default function BetaForm({ onClose }: BetaFormProps) {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold mb-2 mt-4">Join the private beta</h2>
+        <h2 className="text-3xl font-bold mb-2 mt-4">
+          Join the private beta
+        </h2>
         <p className="text-gray-400 mb-8">
           Get early access to our revolutionary web automation platform.
           Accepted members receive an API key via email.
@@ -190,5 +192,9 @@ export default function BetaForm({ onClose }: BetaFormProps) {
 
   .animate-border-spin {
     animation: border-spin 2s linear forwards;
+  }
+
+  .group:hover .group-hover\\:translate-x-2 {
+    transform: translateX(2rem);
   }
 `}</style>
