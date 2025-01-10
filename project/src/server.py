@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
-from .test import PreciseActionRecorder
 import requests
+from .test import PreciseActionRecorder
 
 
 app = Flask(__name__)
@@ -13,21 +13,25 @@ def start_recording():
 
 @app.route('/stop-recording', methods=['POST'])
 def start_recording():
-    recorder.stop_recording()
-    return jsonify({"message": "Recording stoped"}), 200
+    log_file = recorder.stop_recording()
+    if log_file:
+        with open(log_file, 'r') as f:
+            data = f.read()
+        # Send the JSON data to the database
+        response = requests.post('https://cloud.appwrite.io/v1/databases/DBLD/collections/67751f2a00039872c0e0/documents', 
+                                 headers={'Content-Type': 'application/json'},
+                                 data=data)
+        return jsonify({"message": "Recording stopped", "response": response.json()}), 200
+    else:
+        return jsonify({"message": "No events recorded"}), 400
+
 
 @app.route('/replay-recording', methods=['POST'])
 def start_recording():
     recorder.replay_events()
     return jsonify({"message": "Recording replaying"}), 200
 
-def main(req, res):
-    response = requests.post('http://localhost:5173/start-recording')
-    return res.json({
-        'message': 'Recording started',
-        'status_code': response.status_code,
-        'response': response.json()
-    })
+
 
 if __name__ == '__main__':
     app.run(port=5173)
