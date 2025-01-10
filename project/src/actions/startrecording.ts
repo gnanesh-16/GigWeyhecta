@@ -13,7 +13,7 @@ export async function startRecording() {
 
     // Call the Appwrite function to start recording
     await functions.createExecution('677924e50032306bd8c1');
-    const response = await fetch('http://localhost:5173/start-recording', {
+    const response = await fetch('/start-recording', {
         method: 'POST'
     });
 

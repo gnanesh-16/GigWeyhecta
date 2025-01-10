@@ -2,6 +2,7 @@
   "name": "vite-react-typescript-starter",
   "private": true,
   "version": "0.0.0",
+  "main": "server.py",
   "type": "module",
   "homepage": "https://github.com/gnanesh-16/Gigwey-/",
   "scripts": {

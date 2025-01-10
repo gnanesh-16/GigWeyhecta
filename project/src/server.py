@@ -37,4 +37,4 @@ def start_recording():
 
 
 if __name__ == '__main__':
-    app.run(port=5173)
+    app.run()
