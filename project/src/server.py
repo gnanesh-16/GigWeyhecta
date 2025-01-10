@@ -1,8 +1,4 @@
-MouseController = pynput.mouse.Listener.MouseListener
-Button = pynput.mouse.Listener.controller.Button
-KeyboardListener = pynput.keyboard.Listener.Listener
-Key = pynput.keyboard.Listener.Key
-KeyCode = pynput.keyboard.Listener.KeyCode
+
 class PreciseActionRecorder:
     """
     A comprehensive tool for recording and precisely replaying user interactions.
