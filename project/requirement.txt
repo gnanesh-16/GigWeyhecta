@@ -1,2 +1,12 @@
 flask
 requests
+json
+time
+os
+json
+threading
+logging
+datetime 
+typing 
+pyautogui
+pynput 
