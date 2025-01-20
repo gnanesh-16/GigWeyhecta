@@ -7,6 +7,8 @@ Web Automation Reimagined Automate your web workflows with pixel-perfect precisi
 
 ![screencapture-localhost-5173-Gigwey-2024-12-31-17_04_46](https://github.com/user-attachments/assets/10a3bd96-b648-4387-936c-5643610aec6e)
 
+![star-history-2025120](https://github.com/user-attachments/assets/c5af2320-b080-4314-a55d-d07338cb1eb5)
+
 
 ![image](https://github.com/user-attachments/assets/6f70d3d7-3182-41d4-883a-32ec1e8a2845)
 
